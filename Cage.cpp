@@ -1,24 +1,26 @@
+#include<iostream>
+#include<string>
 #include "Cage.h"
 
+using namespace std;
 
-Cage :: Cage(){
-    id = 0;
-    occupant = "";
+Cage::Cage()
+{
+    name = "";
+    num = 0;
 }
- 
-Cage :: Cage(int newNumber, std::string newName){
-    id = newNumber;
-    occupant = newName;
+Cage::Cage(std::string newName, int newNumber){
+    name = newName;
+    num = newNumber;
 }
-
-std::string Cage ::  get_name(){
-    return occupant;
+std::string Cage::get_name(){
+    return name;
 }
-
-int Cage :: get_ID_number(){
-    return id;
+int Cage::get_IDnum(){
+    return num;
 }
 
-Cage :: ~Cage(){
-    
+Cage::~Cage()
+{
+
 }

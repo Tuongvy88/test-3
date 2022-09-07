@@ -1,39 +1,43 @@
 #include "Clinic.h"
+#include "Cage.h"
+#include <iostream>
+#include <string>
 
-
-Clinic :: Clinic(){
-    max_size = 0;
-    numCages = 0;
-    name = "";
-    cages = new Cage();
+Clinic::Clinic()
+{
+    size = 0;
+    index = 0;
+    cages = NULL;
 }
-
-Clinic::Clinic(int new_max_size, std::string name){
-    max_size = new_max_size;
-    this->name = name;
-    cages = new Cage[new_max_size];
-    numCages = 0;
+Clinic::Clinic(std::string name, int max_size)
+{
+    c_name = name;
+    size = max_size;
+    index = 0;
+    cages = new Cage[size];
 }
- 
-std::string Clinic::get_name(){
-    return name;
+int Clinic::get_number_of_cages()
+{
+    return size;
 }
-int Clinic::get_number_of_cages(){
-    return numCages;
+std::string Clinic::get_name()
+{
+    return c_name;
 }
-
-Cage* Clinic::get_cages(){
+Cage *Clinic::get_cages()
+{
     return cages;
-}     
-
-bool Clinic::add_cage(Cage new_cage){
-    if(numCages <= max_size){
-        cages[numCages] = new_cage;
-        numCages+=1;
+}
+bool Clinic::add_cage(Cage new_cage)
+{
+    if (index < size)
+    {
+        cages[index] = new_cage;
+        index++;
         return true;
     }
     return false;
 }
-
-Clinic :: ~Clinic(){
+Clinic::~Clinic()
+{
 }
