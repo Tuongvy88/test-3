@@ -8,7 +8,7 @@ class Clinic
 private:
     std::string c_name;
     int size;
-    Cage *cages;
+    Cage *vy;
 
 public:
     int index;
