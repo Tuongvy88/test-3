@@ -36,4 +36,4 @@ bool Clinic::add_cage(Cage new_cage){
 }
 
 Clinic :: ~Clinic(){
-} 
+}
