@@ -1,19 +1,19 @@
 #ifndef CAGE_H
 #define CAGE_H
 
-#include<string>
-using namespace std;
+#include <iostream>
 
 class Cage
 {
-//Private instance variables
-private:
-string occupantName;
-int IDNumber;
-public:
-Cage();
-Cage(int, string);
-string get_name();
-int get_id_number();
-~Cage();
-}; 
+    public:
+        Cage();
+        Cage(int newNumber, std::string newName); 
+        std::string get_name(); 
+        int get_ID_number(); 
+        ~Cage();
+    private:
+        int id;
+        std::string occupant;
+};
+
+#endif 
